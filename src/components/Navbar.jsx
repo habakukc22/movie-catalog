@@ -1,28 +1,23 @@
-import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { BiMovie } from "react-icons/bi";
+// import { Link } from "react-router-dom";
+import classes from "./Navbar.module.css";
 
 function Navbar() {
   return (
-    <nav className="navbar mb-12 shadow-lg bg-neutral text-neutral-content">
-      <div className="container mx-auto">
-        <div className="flex-none px-2 mx-2">
-          <FaGithub className="inline pr-2 text-3xl" />
-          <Link to="/" className="text-lg font-bold align-middle">
-            {"Hey you"}
-          </Link>
+    <nav className={classes.navbar}>
+
+      <div className={classes.left}>
+
+        <div className={classes.logo}>
+          <BiMovie />
+          <p>Movie Catalog</p>
         </div>
 
-        <div className="flex-1 px-2 mx-2">
-          <div className="flex justify-end">
-            <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
-              Home
-            </Link>
-            <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
-              About
-            </Link>
-          </div>
-        </div>
+        <div>Categories</div>
+
       </div>
+
+      <div className={classes.right}>Right</div>
     </nav>
   );
 }

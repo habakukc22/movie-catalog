@@ -1,0 +1,25 @@
+.navbar {
+  background-color: rgb(10, 10, 10);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 4rem;
+}
+
+.navbar .logo p {
+  margin: 0rem 0.1rem;
+}
+
+.navbar .right {
+  color: red;
+}
