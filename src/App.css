@@ -1,4 +1,11 @@
 .App {
   text-align: center;
   color: antiquewhite;
+  /* display: flex; */
+  justify-content: center;
+}
+
+.container {
+  border: 1px red solid;
+  margin: 0 10%;
 }

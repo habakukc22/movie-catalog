@@ -19,7 +19,7 @@ function Navbar() {
           <GoTriangleDown />
         </Link>
 
-        <Link to="/" className={classes.button}>
+        <Link to="/applications" className={classes.button}>
           Applications
         </Link>
       </div>
@@ -28,7 +28,7 @@ function Navbar() {
 
         <Input />
 
-        <Link to="/" className={classes.button}>
+        <Link to="/sign-in" className={classes.button}>
           <IoPersonOutline />
           Login
         </Link>
