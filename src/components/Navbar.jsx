@@ -1,23 +1,38 @@
 import { BiMovie } from "react-icons/bi";
-// import { Link } from "react-router-dom";
+import { IoPersonOutline } from "react-icons/io5";
+import { GoTriangleDown } from "react-icons/go";
+import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
+import Input from "../layout/Input";
 
 function Navbar() {
   return (
     <nav className={classes.navbar}>
-
       <div className={classes.left}>
-
-        <div className={classes.logo}>
+        <Link to="/" className={classes.button}>
           <BiMovie />
-          <p>Movie Catalog</p>
-        </div>
+          Movie Catalog
+        </Link>
 
-        <div>Categories</div>
+        <Link to="/" className={classes.button}>
+          Categories
+          <GoTriangleDown />
+        </Link>
 
+        <Link to="/" className={classes.button}>
+          Applications
+        </Link>
       </div>
 
-      <div className={classes.right}>Right</div>
+      <div className={classes.right}>
+
+        <Input />
+
+        <Link to="/" className={classes.button}>
+          <IoPersonOutline />
+          Login
+        </Link>
+      </div>
     </nav>
   );
 }
