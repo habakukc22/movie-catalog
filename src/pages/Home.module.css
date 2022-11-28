@@ -1,4 +1,13 @@
 .main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
+/* .main .category1{
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  border: 1px red dashed;
+} */

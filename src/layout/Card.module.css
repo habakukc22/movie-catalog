@@ -1,15 +1,16 @@
 .card {
   width: 300px;
-  margin: 1rem;
-  background-color: red;
+  margin: 0.5rem;
   box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
-  position: relative;
-  overflow: hidden;
-  border-radius: 3px;
+  border-radius: 5px;
+  text-align: left;
+  /* border: 1px purple dashed; */
+  flex: 0 0 auto;
 }
 
 .card img {
   width: 100%;
+  border-radius: 5px 5px 0 0;
 }
 
 .card .movie-info {
@@ -20,8 +21,12 @@
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
 }
+.card .movie-info h3 {
+  margin: 0;
+}
 
 .card .overview {
+  display: none;
   background-color: white;
   padding: 2rem;
   position: absolute;

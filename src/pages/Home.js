@@ -1,31 +1,34 @@
-import Movie from "../components/Movie";
 import classes from "./Home.module.css";
+import DiscoverMovies from "../components/DiscoverMovies";
 
-import { useEffect, useState } from "react";
-
-// const urlDefault = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${myKey}&page=1`;
-// const urlMovieId = `https://api.themoviedb.org/3/movie/${movieId}?api_key=0f2b38bc79199925ea745449cbd43368`;
-const myKey = "0f2b38bc79199925ea745449cbd43368";
-const urlMostPopular = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${myKey}&page=1`;
+const discoverMovies = [
+  {
+    title: "What movies are in theatres?",
+    url: "/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22",
+  },
+  {
+    title: "What are the most popular movies?",
+    url: "/discover/movie?sort_by=popularity.desc",
+  },
+  {
+    title: "What are the most popular kids movies?",
+    url: "/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc",
+  },
+  {
+    title: "What are the best dramas that were released this year?",
+    url: "/discover/movie?with_genres=18&primary_release_year=2022",
+  },
+  {
+    title: "What are the best drama's?",
+    url: "/discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10",
+  },
+];
 
 function Home() {
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    const fetchHomeData = async () => {
-      const response = await fetch(urlMostPopular);
-      const data = await response.json();
-      setMovies(data.results);
-    };
-
-    fetchHomeData();
-  }, []);
-
-  console.log(movies);
-
   return (
     <div className={classes.main}>
-      {movies.map((movie) => (
-        <Movie movie={movie} key={movie.id} />
+      {discoverMovies.map((category) => (
+        <DiscoverMovies title={category.title} url={category.url} />
       ))}
     </div>
   );
