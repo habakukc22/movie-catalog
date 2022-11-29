@@ -1,5 +1,6 @@
 import classes from "./Home.module.css";
-import DiscoverMovies from "../components/DiscoverMovies";
+// import DiscoverMovies from "../components/DiscoverMovies";
+import List from "../components/MovieList/List";
 
 const discoverMovies = [
   {
@@ -27,9 +28,16 @@ const discoverMovies = [
 function Home() {
   return (
     <div className={classes.main}>
-      {discoverMovies.map((category) => (
+
+      
+      <List />
+      <List />
+      <List />
+      <List />
+
+      {/* {discoverMovies.map((category) => (
         <DiscoverMovies title={category.title} url={category.url} />
-      ))}
+      ))} */}
     </div>
   );
 }
