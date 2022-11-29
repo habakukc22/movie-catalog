@@ -4,7 +4,7 @@ import DiscoverMovies from "../components/DiscoverMovies";
 const discoverMovies = [
   {
     title: "What movies are in theatres?",
-    url: "/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22",
+    url: "/discover/movie?primary_release_date.gte=2022-10-01&primary_release_date.lte=2022-11-29",
   },
   {
     title: "What are the most popular movies?",
