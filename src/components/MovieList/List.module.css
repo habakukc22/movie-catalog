@@ -1,6 +1,6 @@
 .list{
     width: 100%;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .list .listTitle{
@@ -17,6 +17,7 @@
     width: max-content;
     margin-top: 10px;
     transform: translateX(0px);
+    transition: transform 0.3s ease-out;
 }
 
 .list .wrapper{

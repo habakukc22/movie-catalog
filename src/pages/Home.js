@@ -1,5 +1,4 @@
 import classes from "./Home.module.css";
-// import DiscoverMovies from "../components/DiscoverMovies";
 import List from "../components/MovieList/List";
 
 const discoverMovies = [
@@ -29,15 +28,10 @@ function Home() {
   return (
     <div className={classes.main}>
 
-      
-      <List />
-      <List />
-      <List />
-      <List />
+      {discoverMovies.map((category) => (
+        <List key={Math.random()} title={category.title} url={category.url} />
+      ))}
 
-      {/* {discoverMovies.map((category) => (
-        <DiscoverMovies title={category.title} url={category.url} />
-      ))} */}
     </div>
   );
 }

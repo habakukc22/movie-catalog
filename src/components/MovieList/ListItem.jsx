@@ -1,7 +1,11 @@
-import classes from "./ListItem.module.css";
+import Movie from "../Movie";
 
-function ListItem() {
-  return <div className={classes.listItem}>item</div>;
+function ListItem(props) {
+  return (
+    <>
+      <Movie movie={props.movie} />
+    </>
+  );
 }
 
 export default ListItem;
