@@ -24,8 +24,6 @@ function List(props) {
     fetchHomeData();
   }, [url]);
 
-  console.log(movies);
-
   let currentPosition = 0;
 
   const clickHandler = (direction) => {
