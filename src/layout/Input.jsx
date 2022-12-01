@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import classes from "./Input.module.css";
 import { searchMovie } from "../store/search-actions";
+import { searchActions } from "../store/search-slice";
 
 function Input() {
   const [search, setSearch] = useState(false);
@@ -15,8 +16,11 @@ function Input() {
 
   const changeHandler = (event) => {
     let typedText = inputRef.current.value.trim();
-    console.log(typedText);
-    dispatch(searchMovie(typedText));
+    if (typedText !== "") {
+      dispatch(searchMovie(typedText));
+    } else {
+      dispatch(searchActions.clearResults());
+    }
   };
 
   const submitHandler = (event) => {

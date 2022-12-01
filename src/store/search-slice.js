@@ -13,6 +13,9 @@ const searchSlice = createSlice({
         searchedMovies: action.payload,
       };
     },
+    clearResults(state, action) {
+      return initialSearchState;
+    },
   },
 });
 
