@@ -1,21 +1,28 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./Input.module.css";
 import { searchMovie } from "../store/search-actions";
 import { searchActions } from "../store/search-slice";
 
 function Input() {
-  const [search, setSearch] = useState(false);
   const inputRef = useRef();
   const dispatch = useDispatch();
+  const showSearchBar = useSelector((state) => state.search.showSearchBar);
+  const isSearching = useSelector((state) => state.search.isSearching);
 
   const searchClickHandler = () => {
-    setSearch((prev) => !prev);
+    if (isSearching) {
+      dispatch(searchActions.toggleSearchBar());
+      dispatch(searchActions.clearResults());
+    } else {
+      dispatch(searchActions.toggleSearchBar());
+    }
   };
 
   const changeHandler = (event) => {
     let typedText = inputRef.current.value.trim();
+
     if (typedText !== "") {
       dispatch(searchMovie(typedText));
     } else {
@@ -30,7 +37,7 @@ function Input() {
   return (
     <div className={classes.input}>
       <form onSubmit={submitHandler}>
-        {search && (
+        {showSearchBar && (
           <input
             type="text"
             placeholder="Search"

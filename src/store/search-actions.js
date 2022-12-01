@@ -5,20 +5,20 @@ let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${myKey}&quer
 
 export const searchMovie = (typedText) => {
   return async (dispatch) => {
-    console.log(typedText);
+    // console.log(typedText);
 
     const fetchMovie = async () => {
       const response = await fetch(searchUrl + typedText);
       const data = await response.json();
 
       const { results } = data;
-      console.log(results);
+      // console.log(results);
 
       return results;
     };
 
     let fetchedMoviesResults = await fetchMovie();
 
-    dispatch(searchActions.updateResults(fetchedMoviesResults));
+    dispatch(searchActions.updateResults({fetchedMoviesResults, typedText}));
   };
 };
