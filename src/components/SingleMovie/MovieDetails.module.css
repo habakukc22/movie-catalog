@@ -1,0 +1,27 @@
+.detailContainer {
+  display: flex;
+  border: 1px red solid;
+  height: 500px;
+  position: relative;
+}
+.detailContainer .details {
+  border: 1px purple solid;
+  background: rgb(100, 100, 100, 0.5);
+  height: 100%;
+  width: 60%;
+  z-index: 10;
+}
+.detailContainer .poster {
+  border: 1px green solid;
+  background: lightcoral;
+  height: 100%;
+  width: 60%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.detailContainer .poster img {
+  width: 100%;
+
+}

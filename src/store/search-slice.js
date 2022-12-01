@@ -15,7 +15,6 @@ const searchSlice = createSlice({
       return {
         ...state,
         isSearching: !!action.payload.typedText.length,
-        showSearchBar: !!action.payload.typedText.length,
         searchText: action.payload.typedText,
         searchedMovies: action.payload.fetchedMoviesResults,
       };
@@ -24,7 +23,7 @@ const searchSlice = createSlice({
       return { ...state, showSearchBar: !state.showSearchBar };
     },
     clearResults(state, action) {
-      return initialSearchState;
+      return { ...initialSearchState, showSearchBar: state.showSearchBar };
     },
   },
 });

@@ -1,13 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import Card from "../layout/Card";
-import classes from '../layout/Card.module.css'
+import classes from "../layout/Card.module.css";
 
 // `https://image.tmdb.org/t/p/w500${backdrop_path}`
 // `https://image.tmdb.org/t/p/w1280${poster_path}`
 
 function Movie(props) {
-  const { title, vote_average, overview, backdrop_path } = props.movie;
+  const { title, vote_average, overview, backdrop_path, id } = props.movie;
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    console.log(id);
+    navigate(`/${id}`);
+  };
+
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} onClick={clickHandler}>
       <img
         src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
         alt={title}

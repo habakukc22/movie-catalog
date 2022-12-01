@@ -5,11 +5,10 @@ import Applications from "./pages/Applications";
 import User from "./pages/User";
 import { useSelector } from "react-redux";
 import SearchResults from "./components/SearchResults";
+import SingleMovie from "./pages/SingleMovie";
 
 function App() {
   const isSearching = useSelector((state) => state.search.isSearching);
-  const searchedMovies = useSelector((state) => state.search.searchedMovies);
-  console.log(isSearching, searchedMovies);
 
   return (
     <Router>
@@ -21,6 +20,7 @@ function App() {
               path="/"
               element={isSearching ? <SearchResults /> : <Home />}
             />
+            <Route path="/:movieId" element={<SingleMovie />} />
             <Route path="/applications" element={<Applications />} />
             <Route path="/sign-in" element={<User />} />
           </Routes>

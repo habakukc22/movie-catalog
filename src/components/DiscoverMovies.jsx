@@ -20,7 +20,7 @@ function DiscoverMovies(props) {
     fetchHomeData();
   }, [url]);
 
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <>
