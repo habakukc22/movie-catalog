@@ -1,27 +1,65 @@
 .detailContainer {
   display: flex;
-  border: 1px red solid;
   height: 500px;
   position: relative;
+  overflow: hidden;
 }
 .detailContainer .details {
-  border: 1px purple solid;
-  background: rgb(100, 100, 100, 0.5);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: antiquewhite;
+  padding: 20px 10px 20px 70px;
   height: 100%;
   width: 60%;
-  z-index: 10;
+  z-index: 1;
 }
 .detailContainer .poster {
-  border: 1px green solid;
-  background: lightcoral;
-  height: 100%;
   width: 60%;
-  overflow: hidden;
   position: absolute;
   right: 0;
-  top: 0;
 }
-.detailContainer .poster img {
-  width: 100%;
 
+.property {
+  display: flex;
+  align-items: center;
+}
+
+.property h3 {
+  margin-right: 10px;
+  color: rgb(200, 200, 200, 0.7);
+}
+
+.propertyOverview h3 {
+  margin: 0 10px 0 0;
+  color: rgb(200, 200, 200, 0.7);
+}
+.propertyOverview p {
+  width: 75%;
+  margin: 0;
+}
+.details h1 .title {
+  margin-right: 30px;
+}
+
+.buttons {
+  margin: 0 10px 10px 0;
+  display: flex;
+}
+
+.buttons button {
+  border: 3px rgb(200, 200, 200, 0.7) solid;
+  background-color: transparent;
+  font-size: large;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  color: antiquewhite;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }

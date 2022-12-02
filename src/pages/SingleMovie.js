@@ -24,8 +24,12 @@ function SingleMovie() {
 
   return (
     <>
-      <MovieDetails movie={movieDetails} />
-      <RelatedMovies movie={movieDetails} />
+      {JSON.stringify(movieDetails) !== JSON.stringify({}) && (
+        <MovieDetails movie={movieDetails} />
+      )}
+      {JSON.stringify(movieDetails) !== JSON.stringify({}) && (
+        <RelatedMovies movie={movieDetails} />
+      )}
     </>
   );
 }
