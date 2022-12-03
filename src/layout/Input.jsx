@@ -43,6 +43,7 @@ function Input() {
             placeholder="Search"
             onChange={changeHandler}
             ref={inputRef}
+            autoFocus={true}
           />
         )}
         <FaSearch

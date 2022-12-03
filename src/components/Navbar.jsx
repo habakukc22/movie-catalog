@@ -4,14 +4,17 @@ import { GoTriangleDown } from "react-icons/go";
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
 import Input from "../layout/Input";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { searchActions } from "../store/search-slice";
 
 function Navbar() {
   const dispatch = useDispatch();
+  const showSearchBar = useSelector((state) => state.search.showSearchBar);
 
   const clickHandler = () => {
-    dispatch(searchActions.toggleSearchBar());
+    if (showSearchBar) {
+      dispatch(searchActions.toggleSearchBar());
+    }
     dispatch(searchActions.clearResults());
   };
 

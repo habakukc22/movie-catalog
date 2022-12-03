@@ -1,16 +1,19 @@
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Card from "../layout/Card";
 import classes from "../layout/Card.module.css";
-
-// `https://image.tmdb.org/t/p/w500${backdrop_path}`
-// `https://image.tmdb.org/t/p/w1280${poster_path}`
+import { searchActions } from "../store/search-slice";
 
 function Movie(props) {
   const { title, vote_average, overview, backdrop_path, id } = props.movie;
   const navigate = useNavigate();
+  const showSearchBar = useSelector((state) => state.search.showSearchBar);
+  const dispatch = useDispatch();
 
   const clickHandler = () => {
-    console.log(id);
+    if (showSearchBar) {
+      dispatch(searchActions.toggleSearchBar());
+    }
     navigate(`/${id}`);
   };
 

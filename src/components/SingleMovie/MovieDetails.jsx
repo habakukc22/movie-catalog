@@ -9,13 +9,18 @@ function MovieDetail(props) {
   let spokenLanguage;
   let overview;
   let votes;
+  let releaseDate; 
   if (JSON.stringify(movie) !== JSON.stringify({})) {
-    // console.log(movie);
     genresList = movie.genres.map((el) => el.name).join(", ");
     spokenLanguage = movie.spoken_languages[0].english_name;
     overview = movie.overview;
     votes = movie.vote_average.toFixed(1);
+    let dateObj = new Date(movie.release_date);
+    releaseDate = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
   }
+
+
+  console.log(new Date(movie.release_date), movie.release_date)
 
   return (
     <div className={classes.detailContainer}>
@@ -26,7 +31,7 @@ function MovieDetail(props) {
         </h1>
         <span className={classes.property}>
           <h3>Release date:</h3>
-          <p>{movie.release_date}</p>
+          <p>{releaseDate}</p>
         </span>
         <span className={classes.property}>
           <h3>Spoken language:</h3>

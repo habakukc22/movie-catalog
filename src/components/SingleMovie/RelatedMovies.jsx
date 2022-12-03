@@ -4,7 +4,7 @@ function RelatedMovies(props) {
   let genres = props.movie.genres.map((el) => el.id).join(",");
 
   const category = {
-    title: "Popular related movies",
+    title: "Related popular movies",
     url: `/discover/movie?with_genres=${genres}&sort_by=popularity.desc`,
   };
 
