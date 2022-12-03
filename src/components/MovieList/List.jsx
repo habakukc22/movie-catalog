@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
-import ListItem from "../MovieList/ListItem.jsx";
+import ListItem from "../MovieList/ListItem";
 
 import classes from "./List.module.css";
 

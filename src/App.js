@@ -6,6 +6,7 @@ import User from "./pages/User";
 import { useSelector } from "react-redux";
 import SearchResults from "./components/SearchResults";
 import SingleMovie from "./pages/SingleMovie";
+import './App.css'
 
 function App() {
   const isSearching = useSelector((state) => state.search.isSearching);
