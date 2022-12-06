@@ -29,7 +29,12 @@
   height: 100%;
 }
 
-.categoryButton{
+.categoriesButton{
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.categoriesContainer{
+  position: relative;
 }

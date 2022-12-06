@@ -6,18 +6,25 @@ import classes from "./Navbar.module.css";
 import Input from "../layout/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { searchActions } from "../store/search-slice";
+import { categoriesActions } from "../store/categories-slice";
 import Categories from "./Categories";
 
 function Navbar() {
   const dispatch = useDispatch();
   const showSearchBar = useSelector((state) => state.search.showSearchBar);
-  const isCategoriesShown = useSelector((state) => state.categories.isCategoriesShown);
+  const isCategoriesShown = useSelector(
+    (state) => state.categories.isCategoriesShown
+  );
 
   const clickHandler = () => {
     if (showSearchBar) {
       dispatch(searchActions.toggleSearchBar());
     }
     dispatch(searchActions.clearResults());
+  };
+
+  const openCategoriesHandler = () => {
+    dispatch(categoriesActions.toggleCategoriesList());
   };
 
   return (
@@ -28,14 +35,18 @@ function Navbar() {
           Movie Catalog
         </Link>
 
-        <Link to="/" className={classes.button}>
-          <div className={classes.categoryButton} onClick={null}>
+        <div className={`${classes.button} ${classes.categoriesContainer}`}>
+          <Link
+            to="/"
+            className={classes.categoriesButton}
+            onClick={openCategoriesHandler}
+          >
             Categories
             {!isCategoriesShown && <GoTriangleDown />}
             {isCategoriesShown && <GoTriangleUp />}
-          </div>
+          </Link>
           <Categories />
-        </Link>
+        </div>
 
         <Link to="/applications" className={classes.button}>
           Applications
