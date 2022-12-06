@@ -28,3 +28,8 @@
   align-items: center;
   height: 100%;
 }
+
+.categoryButton{
+  display: flex;
+  align-items: center;
+}
