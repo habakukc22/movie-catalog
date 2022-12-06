@@ -38,3 +38,11 @@
 .categoriesContainer{
   position: relative;
 }
+
+.categoriesButton svg{
+  transform: rotate(0deg);
+  transition: transform 150ms ease-in-out ;
+}
+.categoriesButton.active svg{
+  transform: rotate(180deg);
+}

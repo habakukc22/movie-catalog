@@ -1,5 +1,5 @@
 .categories {
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(26, 26, 26, .95);
   box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.3);
   position: absolute;
   z-index: 100;
@@ -29,4 +29,8 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+.categories a:hover {
+  text-decoration: underline;
 }

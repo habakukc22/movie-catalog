@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
 const myKey = "0f2b38bc79199925ea745449cbd43368";
-let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${myKey}&query=`;
+let defaultURL = "https://api.themoviedb.org/3";
 
 const useHttp = (searchedText) => {
   const [movies, setMovies] = useState([]);
 
+  let url = defaultURL + searchedText + `&api_key=${myKey}`;
+
   useEffect(() => {
     const fetchHomeData = async () => {
-      console.log(searchUrl + searchedText);
-      const response = await fetch(searchUrl + searchedText);
+      const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
+
       setMovies(data.results);
     };
 
     fetchHomeData();
-  }, [searchedText]);
+  }, [url]);
 
   return movies;
 };

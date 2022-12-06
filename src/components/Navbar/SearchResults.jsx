@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import ListItem from "./MovieList/ListItem";
+import ListItem from "../MovieList/ListItem";
 import classes from "./SearchResults.module.css";
 
 function SearchResults() {

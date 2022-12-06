@@ -1,12 +1,12 @@
 import { BiMovie } from "react-icons/bi";
 import { IoPersonOutline } from "react-icons/io5";
-import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
+import { GoTriangleDown } from "react-icons/go";
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
-import Input from "../layout/Input";
+import Input from "../../layout/Input";
 import { useDispatch, useSelector } from "react-redux";
-import { searchActions } from "../store/search-slice";
-import { categoriesActions } from "../store/categories-slice";
+import { searchActions } from "../../store/search-slice";
+import { categoriesActions } from "../../store/categories-slice";
 import Categories from "./Categories";
 
 function Navbar() {
@@ -37,13 +37,14 @@ function Navbar() {
 
         <div className={`${classes.button} ${classes.categoriesContainer}`}>
           <Link
-            to="/"
-            className={classes.categoriesButton}
+            to="#"
+            className={`${classes.categoriesButton} ${
+              isCategoriesShown ? classes.active : ""
+            }`}
             onClick={openCategoriesHandler}
+            id="categoriesButton"
           >
-            Categories
-            {!isCategoriesShown && <GoTriangleDown />}
-            {isCategoriesShown && <GoTriangleUp />}
+            Categories <GoTriangleDown />
           </Link>
           <Categories />
         </div>

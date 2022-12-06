@@ -14,6 +14,12 @@ const categoriesSlice = createSlice({
         isCategoriesShown: !state.isCategoriesShown,
       };
     },
+    closeCategoriesList(state, action) {
+      return {
+        ...state,
+        isCategoriesShown: false,
+      };
+    },
   },
 });
 

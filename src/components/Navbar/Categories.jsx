@@ -17,14 +17,14 @@ function Categories() {
     const fetchGenres = async () => {
       const response = await fetch(url);
       const data = await response.json();
-      
+
       setGenres(data.genres);
     };
 
     fetchGenres();
   }, []);
 
-  console.log(genres);
+  // console.log(genres);
   let categoryList;
   if (genres.length) {
     categoryList = genres.map((genre) => (
@@ -38,6 +38,7 @@ function Categories() {
 
   return (
     <div
+      id="categories"
       className={`${classes.categories} ${
         isCategoriesShown ? classes.active : ""
       }`}
