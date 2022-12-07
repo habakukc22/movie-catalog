@@ -1,4 +1,6 @@
 import { BiMovie } from "react-icons/bi";
+import { FaSearch } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { IoPersonOutline } from "react-icons/io5";
 import { GoTriangleDown } from "react-icons/go";
 import { Link } from "react-router-dom";
@@ -8,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { searchActions } from "../../store/search-slice";
 import { categoriesActions } from "../../store/categories-slice";
 import Categories from "./Categories";
+import { burguerActions } from "../../store/burguer-slice";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -15,6 +18,7 @@ function Navbar() {
   const isCategoriesShown = useSelector(
     (state) => state.categories.isCategoriesShown
   );
+  const isBurguerHit = useSelector((state) => state.burguer.isBurguerHit);
 
   const clickHandler = () => {
     if (showSearchBar) {
@@ -27,10 +31,19 @@ function Navbar() {
     dispatch(categoriesActions.toggleCategoriesList());
   };
 
+  const burguerMenuClickHandler = (e) => {
+    console.log(e.target)
+    dispatch(burguerActions.toggleBurguerMenu());
+  };
+
   return (
     <nav className={classes.navbar}>
       <div className={classes.left}>
-        <Link to="/" className={classes.button} onClick={clickHandler}>
+        <Link
+          to="/"
+          className={`${classes.button} ${classes.logo}`}
+          onClick={clickHandler}
+        >
           <BiMovie />
           Movie Catalog
         </Link>
@@ -49,7 +62,10 @@ function Navbar() {
           <Categories />
         </div>
 
-        <Link to="/applications" className={classes.button}>
+        <Link
+          to="/applications"
+          className={`${classes.button} ${classes.applications}`}
+        >
           Applications
         </Link>
       </div>
@@ -61,6 +77,32 @@ function Navbar() {
           <IoPersonOutline />
           Login
         </Link>
+      </div>
+
+      <div className={classes.hamburguerMenu}>
+        <FaSearch className={classes.search} />
+
+        <GiHamburgerMenu
+          className={classes.burguer}
+          onClick={burguerMenuClickHandler}
+          id="burguerMenuButton"
+        />
+      </div>
+
+      <div
+        id="burguerMenuOptions"
+        className={`${classes["burguer-menu-options"]} ${
+          isBurguerHit ? classes.active : ""
+        }`}
+      >
+        <div className={classes.categories}>
+          Categories <GoTriangleDown />
+        </div>
+        <div className={classes["applications-mob"]}>Applications</div>
+        <div className={classes.login}>
+          <button className={classes["sign-in"]}>Login</button>
+          <button className={classes["sign-up"]}>Register</button>
+        </div>
       </div>
     </nav>
   );
