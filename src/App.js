@@ -5,23 +5,43 @@ import Applications from "./pages/Applications";
 import User from "./pages/User";
 import { useDispatch, useSelector } from "react-redux";
 import { categoriesActions } from "./store/categories-slice";
-// import { burguerActions } from "./store/burguer-slice";
+import { burguerActions } from "./store/burguer-slice";
 import SearchResults from "./components/Navbar/SearchResults";
 import SingleMovie from "./pages/SingleMovie";
 import "./App.css";
 import SingleGenre from "./pages/SingleGenre";
 
 // const myKey = "0f2b38bc79199925ea745449cbd43368";
+const ancestorHasId = (e, id) => {
+  let currentEl = e.target;
+ 
+  while (true) {
+    if (!!currentEl && currentEl.id !== id) {
+
+      if (currentEl.id === "root") {
+        return false;
+      }
+
+      currentEl = currentEl.parentNode;
+    } else {
+      return true;
+    }
+  }
+};
 
 function App() {
   const dispatch = useDispatch();
   const isSearching = useSelector((state) => state.search.isSearching);
 
   const closeOtherThingsHandler = (e) => {
+    console.log(e);
     console.log(e.target);
     if (
       e.target.id === "categories" ||
-      e.target.id === "categoriesButton" 
+      e.target.id === "categoriesButton" ||
+      ancestorHasId(e, "burguerMenuOptions") ||
+      ancestorHasId(e, "burguerMenuButton")
+
       // ||
       // e.target.id === "burguerMenuOptions" ||
       // e.target.id === "burguerMenuButton"
@@ -29,7 +49,7 @@ function App() {
       return;
     } else {
       dispatch(categoriesActions.closeCategoriesList());
-      // dispatch(burguerActions.closeBurguerMenu());
+      dispatch(burguerActions.closeBurguerMenu());
     }
   };
 
