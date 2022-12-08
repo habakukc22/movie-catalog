@@ -126,6 +126,11 @@
     transform: translateY(0);
   }
 
+  .burguer-menu-options .categories a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .burguer-menu-options .categories,
   .burguer-menu-options .applications-mob,
   .burguer-menu-options .login {

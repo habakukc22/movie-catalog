@@ -10,6 +10,7 @@ import SearchResults from "./components/Navbar/SearchResults";
 import SingleMovie from "./pages/SingleMovie";
 import "./App.css";
 import SingleGenre from "./pages/SingleGenre";
+import CategoriesMobile from "./pages/CategoriesMobile";
 
 // const myKey = "0f2b38bc79199925ea745449cbd43368";
 const ancestorHasId = (e, id) => {
@@ -58,6 +59,7 @@ function App() {
             />
             <Route path="/:movieId" element={<SingleMovie />} />
             <Route path="/genre/:genreId" element={<SingleGenre />} />
+            <Route path="/categories" element={<CategoriesMobile />} />
             <Route path="/applications" element={<Applications />} />
             <Route path="/sign-in" element={<User />} />
           </Routes>

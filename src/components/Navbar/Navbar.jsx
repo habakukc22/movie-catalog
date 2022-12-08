@@ -100,7 +100,9 @@ function Navbar() {
         }`}
       >
         <div className={classes.categories}>
-          Categories
+          <Link to="/categories" onClick={burguerMenuClickHandler}>
+            Categories
+          </Link>
           {/* <GoTriangleDown /> */}
         </div>
         <div className={classes["applications-mob"]}>Applications</div>
