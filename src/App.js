@@ -57,11 +57,26 @@ function App() {
               path="/"
               element={isSearching ? <SearchResults /> : <Home />}
             />
-            <Route path="/:movieId" element={<SingleMovie />} />
-            <Route path="/genre/:genreId" element={<SingleGenre />} />
-            <Route path="/categories" element={<CategoriesMobile />} />
-            <Route path="/applications" element={<Applications />} />
-            <Route path="/sign-in" element={<User />} />
+            <Route
+              path="/:movieId"
+              element={isSearching ? <SearchResults /> : <SingleMovie />}
+            />
+            <Route
+              path="/genre/:genreId"
+              element={isSearching ? <SearchResults /> : <SingleGenre />}
+            />
+            <Route
+              path="/categories"
+              element={isSearching ? <SearchResults /> : <CategoriesMobile />}
+            />
+            <Route
+              path="/applications"
+              element={isSearching ? <SearchResults /> : <Applications />}
+            />
+            <Route
+              path="/sign-in"
+              element={isSearching ? <SearchResults /> : <User />}
+            />
           </Routes>
         </div>
       </div>

@@ -1,11 +1,9 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
+import useHttp from "../../hooks/useHttp";
 import ListItem from "../MovieList/ListItem";
 
 import classes from "./List.module.css";
-
-const urlDefault = "https://api.themoviedb.org/3";
-const myKey = "0f2b38bc79199925ea745449cbd43368";
 
 function List(props) {
   const { title, url } = props;
@@ -14,16 +12,15 @@ function List(props) {
   const screenWidth = document.querySelector("#root").clientWidth;
   const cardWidth = screenWidth > 960 ? 316 : 316 / 2; //movie card width + margin
 
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    const fetchHomeData = async () => {
-      const response = await fetch(urlDefault + url + `&api_key=${myKey}`);
-      const data = await response.json();
-      setMovies(data.results);
-    };
-
-    fetchHomeData();
-  }, [url]);
+  let data = useHttp(url);
+  let movies;
+  if (JSON.stringify(data) === JSON.stringify([])) {
+    return;
+  } else if (data.results.length) {
+    movies = data.results;
+  } else {
+    return;
+  }
 
   let currentPosition = 0;
 

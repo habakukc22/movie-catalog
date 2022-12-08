@@ -1,32 +1,26 @@
 import classes from "./Categories.module.css";
-
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import useHttp from "../../hooks/useHttp";
 
-const apiKey = "0f2b38bc79199925ea745449cbd43368";
-let url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`;
+// const apiKey = "0f2b38bc79199925ea745449cbd43368";
+// let url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`;
+let url = "/genre/movie/list?";
 
 function Categories() {
-  const [genres, setGenres] = useState([]);
   const isCategoriesShown = useSelector(
     (state) => state.categories.isCategoriesShown
   );
 
-  useEffect(() => {
-    const fetchGenres = async () => {
-      const response = await fetch(url);
-      const data = await response.json();
+  let data = useHttp(url);
+  
+  let genres;
+  if (data.genres) {
+     genres = data.genres;
+  }
 
-      setGenres(data.genres);
-    };
-
-    fetchGenres();
-  }, []);
-
-  // console.log(genres);
   let categoryList;
-  if (genres.length) {
+  if (!!genres && genres.length) {
     categoryList = genres.map((genre) => (
       <div key={genre.id} className={classes.genre}>
         <Link to={`/genre/${genre.id}`}>{genre.name}</Link>

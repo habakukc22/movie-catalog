@@ -8,11 +8,15 @@ function Movie(props) {
   const { title, vote_average, overview, backdrop_path, id } = props.movie;
   const navigate = useNavigate();
   const showSearchBar = useSelector((state) => state.search.showSearchBar);
+  const isSearching = useSelector((state) => state.search.isSearching);
   const dispatch = useDispatch();
 
   const clickHandler = () => {
     if (showSearchBar) {
       dispatch(searchActions.toggleSearchBar());
+    }
+    if(isSearching){
+      dispatch(searchActions.clearResults())
     }
     navigate(`/${id}`);
   };
