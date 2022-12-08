@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./Input.module.css";
 import { searchMovie } from "../store/search-actions";
@@ -46,10 +47,17 @@ function Input() {
             autoFocus={true}
           />
         )}
-        <FaSearch
-          className={classes["search-icon"]}
-          onClick={searchClickHandler}
-        />
+        {!showSearchBar ? (
+          <FaSearch
+            className={classes["search-icon"]}
+            onClick={searchClickHandler}
+          />
+        ) : (
+          <AiOutlineClose
+            className={classes["close-icon"]}
+            onClick={searchClickHandler}
+          />
+        )}
       </form>
     </div>
   );

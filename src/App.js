@@ -14,10 +14,9 @@ import SingleGenre from "./pages/SingleGenre";
 // const myKey = "0f2b38bc79199925ea745449cbd43368";
 const ancestorHasId = (e, id) => {
   let currentEl = e.target;
- 
+
   while (true) {
     if (!!currentEl && currentEl.id !== id) {
-
       if (currentEl.id === "root") {
         return false;
       }
@@ -34,17 +33,11 @@ function App() {
   const isSearching = useSelector((state) => state.search.isSearching);
 
   const closeOtherThingsHandler = (e) => {
-    console.log(e);
-    console.log(e.target);
     if (
-      e.target.id === "categories" ||
-      e.target.id === "categoriesButton" ||
+      ancestorHasId(e, "categories") ||
+      ancestorHasId(e, "categoriesButton") ||
       ancestorHasId(e, "burguerMenuOptions") ||
       ancestorHasId(e, "burguerMenuButton")
-
-      // ||
-      // e.target.id === "burguerMenuOptions" ||
-      // e.target.id === "burguerMenuButton"
     ) {
       return;
     } else {

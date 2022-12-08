@@ -1,5 +1,4 @@
 import { BiMovie } from "react-icons/bi";
-import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoPersonOutline } from "react-icons/io5";
 import { GoTriangleDown } from "react-icons/go";
@@ -32,21 +31,24 @@ function Navbar() {
   };
 
   const burguerMenuClickHandler = (e) => {
-    console.log(e.target)
     dispatch(burguerActions.toggleBurguerMenu());
   };
+
+  const screenWidth = document.querySelector("#root").clientWidth;
 
   return (
     <nav className={classes.navbar}>
       <div className={classes.left}>
-        <Link
-          to="/"
-          className={`${classes.button} ${classes.logo}`}
-          onClick={clickHandler}
-        >
-          <BiMovie />
-          Movie Catalog
-        </Link>
+        {(screenWidth > 960 || !showSearchBar) && (
+          <Link
+            to="/"
+            className={`${classes.button} ${classes.logo}`}
+            onClick={clickHandler}
+          >
+            <BiMovie />
+            Movie Catalog
+          </Link>
+        )}
 
         <div className={`${classes.button} ${classes.categoriesContainer}`}>
           <Link
@@ -71,7 +73,7 @@ function Navbar() {
       </div>
 
       <div className={classes.right}>
-        <Input />
+        {screenWidth >= 960 && <Input />}
 
         <Link to="/sign-in" className={classes.button}>
           <IoPersonOutline />
@@ -80,13 +82,15 @@ function Navbar() {
       </div>
 
       <div className={classes.hamburguerMenu}>
-        <FaSearch className={classes.search} />
+        {screenWidth < 960 && <Input />}
 
-        <GiHamburgerMenu
-          className={classes.burguer}
-          onClick={burguerMenuClickHandler}
-          id="burguerMenuButton"
-        />
+        {!showSearchBar && (
+          <GiHamburgerMenu
+            className={classes.burguer}
+            onClick={burguerMenuClickHandler}
+            id="burguerMenuButton"
+          />
+        )}
       </div>
 
       <div

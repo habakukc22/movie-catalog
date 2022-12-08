@@ -4,7 +4,6 @@ import classes from "./SearchResults.module.css";
 
 function SearchResults() {
   let movies = useSelector((state) => state.search.searchedMovies);
-  // console.log(movies);
 
   return (
     <div className={classes.searchResults}>
