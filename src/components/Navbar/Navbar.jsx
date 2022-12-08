@@ -4,7 +4,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { GoTriangleDown } from "react-icons/go";
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
-import Input from "../../layout/Input";
+import Input from "./Input";
 import { useDispatch, useSelector } from "react-redux";
 import { searchActions } from "../../store/search-slice";
 import { categoriesActions } from "../../store/categories-slice";
@@ -100,7 +100,8 @@ function Navbar() {
         }`}
       >
         <div className={classes.categories}>
-          Categories <GoTriangleDown />
+          Categories
+          {/* <GoTriangleDown /> */}
         </div>
         <div className={classes["applications-mob"]}>Applications</div>
         <div className={classes.login}>

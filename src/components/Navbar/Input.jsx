@@ -3,8 +3,8 @@ import { FaSearch } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./Input.module.css";
-import { searchMovie } from "../store/search-actions";
-import { searchActions } from "../store/search-slice";
+import { searchMovie } from "../../store/search-actions";
+import { searchActions } from "../../store/search-slice";
 
 function Input() {
   const inputRef = useRef();

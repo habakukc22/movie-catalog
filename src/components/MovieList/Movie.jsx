@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Card from "../layout/Card";
-import classes from "../layout/Card.module.css";
-import { searchActions } from "../store/search-slice";
+import Card from "./Card";
+import classes from "./Card.module.css";
+import { searchActions } from "../../store/search-slice";
 
 function Movie(props) {
   const { title, vote_average, overview, backdrop_path, id } = props.movie;

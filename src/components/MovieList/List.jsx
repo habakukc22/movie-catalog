@@ -11,7 +11,8 @@ function List(props) {
   const { title, url } = props;
   const listRef = useRef();
   const wrapperRef = useRef();
-  const cardWidth = 316; //movie card width + margin
+  const screenWidth = document.querySelector("#root").clientWidth;
+  const cardWidth = screenWidth > 960 ? 316 : 316 / 2; //movie card width + margin
 
   const [movies, setMovies] = useState([]);
   useEffect(() => {
@@ -37,10 +38,11 @@ function List(props) {
       currentPosition >
         -Math.abs(
           Math.floor(
-            (listRef.current.clientWidth - wrapperRef.current.clientWidth) / cardWidth
+            (listRef.current.clientWidth - wrapperRef.current.clientWidth) /
+              cardWidth
           ) * cardWidth
         ) -
-        cardWidth
+          cardWidth
     ) {
       currentPosition = currentPosition - cardWidth;
       listRef.current.style.transform = `translateX(${currentPosition}px)`;

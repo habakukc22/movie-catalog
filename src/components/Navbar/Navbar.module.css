@@ -103,7 +103,7 @@
   .burguer-menu-options {
     background-color: rgb(0, 0, 0, 0.9);
     box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
-    position: absolute;
+    position: fixed;
     top: 62px;
     right: 10px;
     z-index: 100;
