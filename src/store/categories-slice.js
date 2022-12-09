@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialCategoriesState = {
+  categories: [],
   isCategoriesShown: false,
 };
 
@@ -19,6 +20,16 @@ const categoriesSlice = createSlice({
         ...state,
         isCategoriesShown: false,
       };
+    },
+    populateCategoryList(state, action) {
+      if (JSON.stringify(state.categories) === JSON.stringify(action.payload)) {
+        return state;
+      } else {
+        return {
+          ...state,
+          categories: action.payload,
+        };
+      }
     },
   },
 });

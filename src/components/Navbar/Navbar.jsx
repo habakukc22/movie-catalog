@@ -61,7 +61,7 @@ function Navbar() {
           >
             Categories <GoTriangleDown />
           </Link>
-          <Categories />
+          {isCategoriesShown && <Categories />}
         </div>
 
         <Link

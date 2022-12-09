@@ -13,10 +13,9 @@ function List(props) {
   const cardWidth = screenWidth > 960 ? 316 : 316 / 2; //movie card width + margin
 
   let data = useHttp(url);
+  
   let movies;
-  if (JSON.stringify(data) === JSON.stringify([])) {
-    return;
-  } else if (data.results.length) {
+  if (data && data.results.length) {
     movies = data.results;
   } else {
     return;

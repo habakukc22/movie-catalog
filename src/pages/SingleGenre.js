@@ -1,26 +1,34 @@
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import ListItem from "../components/MovieList/ListItem"
+import ListItem from "../components/MovieList/ListItem";
 import useHttp from "../hooks/useHttp";
 import classes from "./SingleGenre.module.css";
 
 function SingleGenre() {
   const { genreId } = useParams();
+  const categories = useSelector(state => state.categories.categories);
 
-  let fetchedMovies = useHttp(
-    `/discover/movie?with_genres=${genreId}&sort_by=popularity.desc&page=1`
+  let data = useHttp(
+    `/discover/movie?with_genres=${genreId}&sort_by=popularity.desc`
   );
+  let fetchedMovies = data ? data.results : null;
+  console.log(data);
+  console.log(categories)
 
-  if (fetchedMovies.length === 0) {
+  if (fetchedMovies) {
+    return (
+      <>
+        <h1>{`Hey`}</h1>
+        <div className={classes.singleGenre}>
+          {fetchedMovies.map((movie) => (
+            <ListItem movie={movie} key={movie.id} />
+          ))}
+        </div>
+      </>
+    );
+  } else {
     return;
   }
-
-  return (
-    <div className={classes.singleGenre}>
-      {fetchedMovies.map((movie) => (
-        <ListItem movie={movie} key={movie.id} />
-      ))}
-    </div>
-  );
 }
 
 export default SingleGenre;

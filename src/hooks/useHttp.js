@@ -3,7 +3,7 @@ const myKey = "0f2b38bc79199925ea745449cbd43368";
 let defaultURL = "https://api.themoviedb.org/3";
 
 const useHttp = (sliceURL) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   let url = defaultURL + sliceURL + `&api_key=${myKey}`;
 
