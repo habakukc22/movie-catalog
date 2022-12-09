@@ -32,7 +32,7 @@ function SingleGenre() {
   if (fetchedMovies) {
     return (
       <>
-        <h1>{movieGenreTitle}</h1>
+        <h1 className={classes.genreTitle}>{movieGenreTitle}</h1>
         <div className={classes.singleGenre}>
           {fetchedMovies.map((movie) => (
             <ListItem movie={movie} key={movie.id} />

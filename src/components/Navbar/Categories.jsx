@@ -13,7 +13,6 @@ function Categories() {
   );
 
   let data = useHttp(url);
-  console.log("Categories!!", data);
 
   let genres = data ? data.genres : undefined;
 

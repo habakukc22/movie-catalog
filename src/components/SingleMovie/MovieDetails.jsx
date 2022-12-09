@@ -5,25 +5,31 @@ import classes from "./MovieDetails.module.css";
 
 function MovieDetail(props) {
   const { movie } = props;
-  let genresList = "";
-  let spokenLanguage;
-  let overview;
-  let votes;
-  let releaseDate;
-  if (JSON.stringify(movie) !== JSON.stringify({})) {
-    genresList = movie.genres.map((el) => el.name).join(", ");
-    spokenLanguage = movie.spoken_languages[0].english_name;
-    overview = movie.overview;
-    votes = movie.vote_average.toFixed(1);
-    let dateObj = new Date(movie.release_date);
-    releaseDate = `${
-      dateObj.getMonth() + 1
-    }/${dateObj.getDate()}/${dateObj.getFullYear()}`;
-  }
+  let genresList = movie.genres.map((el) => el.name).join(", ");
+  let spokenLanguage = movie.spoken_languages[0].english_name;
+  let overview = movie.overview;
+  let votes = movie.vote_average.toFixed(1);
+  let dateObj = new Date(movie.release_date);
+  let releaseDate = `${
+    dateObj.getMonth() + 1
+  }/${dateObj.getDate()}/${dateObj.getFullYear()}`;
+
+  // if (JSON.stringify(movie) !== JSON.stringify({})) {
+  //   // genresList = movie.genres.map((el) => el.name).join(", ");
+  //   // spokenLanguage = movie.spoken_languages[0].english_name;
+  //   // overview = movie.overview;
+  //   // votes = movie.vote_average.toFixed(1);
+  //   let dateObj = new Date(movie.release_date);
+  //   releaseDate = `${
+  //     dateObj.getMonth() + 1
+  //   }/${dateObj.getDate()}/${dateObj.getFullYear()}`;
+  // }
 
   return (
     <div className={classes.detailContainer}>
+
       <div className={classes.details}>
+        
         <h1>
           <span className={classes.title}>{movie.title}</span>
           <CiStar /> {votes}
@@ -57,11 +63,13 @@ function MovieDetail(props) {
           <p>{overview}</p>
         </span>
       </div>
+
       <img
         src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
         alt={movie.title}
         className={classes.poster}
       />
+
     </div>
   );
 }
