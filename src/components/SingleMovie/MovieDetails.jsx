@@ -14,17 +14,6 @@ function MovieDetail(props) {
     dateObj.getMonth() + 1
   }/${dateObj.getDate()}/${dateObj.getFullYear()}`;
 
-  // if (JSON.stringify(movie) !== JSON.stringify({})) {
-  //   // genresList = movie.genres.map((el) => el.name).join(", ");
-  //   // spokenLanguage = movie.spoken_languages[0].english_name;
-  //   // overview = movie.overview;
-  //   // votes = movie.vote_average.toFixed(1);
-  //   let dateObj = new Date(movie.release_date);
-  //   releaseDate = `${
-  //     dateObj.getMonth() + 1
-  //   }/${dateObj.getDate()}/${dateObj.getFullYear()}`;
-  // }
-
   return (
     <div className={classes.detailContainer}>
 

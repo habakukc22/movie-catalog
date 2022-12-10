@@ -1,72 +1,77 @@
-.detailContainer {
-  display: flex;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
-}
-.detailContainer .details {
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 75%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  color: antiquewhite;
-  padding: 20px 10px 20px 70px;
-  height: 100%;
-  width: 60%;
-  z-index: 1;
-}
-.detailContainer .poster {
-  width: 60%;
-  position: absolute;
-  right: 0;
-}
+@media (min-width: 960px) {
+  .detailContainer {
+    display: flex;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+  }
+  .detailContainer .details {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    color: antiquewhite;
+    padding: 20px 10px 20px 70px;
+    height: 100%;
+    width: 60%;
+    z-index: 1;
+  }
+  .detailContainer .poster {
+    width: 60%;
+    position: absolute;
+    right: 0;
+  }
 
-.property {
-  display: flex;
-  align-items: center;
-}
+  .property {
+    display: flex;
+    align-items: center;
+  }
 
-.property h3 {
-  margin-right: 10px;
-  color: rgb(200, 200, 200, 0.7);
-}
+  .property h3 {
+    margin-right: 10px;
+    color: rgb(200, 200, 200, 0.7);
+  }
 
-.propertyOverview h3 {
-  margin: 0 10px 0 0;
-  color: rgb(200, 200, 200, 0.7);
-}
-.propertyOverview p {
-  width: 75%;
-  margin: 0;
-}
-.details h1 .title {
-  margin-right: 30px;
-}
+  .propertyOverview h3 {
+    margin: 0 10px 0 0;
+    color: rgb(200, 200, 200, 0.7);
+  }
+  .propertyOverview p {
+    width: 75%;
+    margin: 0;
+  }
+  .details h1 .title {
+    margin-right: 30px;
+  }
 
-.buttons {
-  margin: 0 10px 10px 0;
-  display: flex;
-}
+  .buttons {
+    margin: 0 10px 10px 0;
+    display: flex;
+  }
 
-.buttons button {
-  border: 3px rgb(200, 200, 200, 0.7) solid;
-  background-color: transparent;
-  font-size: large;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-right: 20px;
-  color: antiquewhite;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+  .buttons button {
+    border: 3px rgb(200, 200, 200, 0.7) solid;
+    background-color: transparent;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    color: antiquewhite;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 960px) {
   .detailContainer {
-    flex-direction: column-reverse;
+    display: flex;
+    position: relative;
+    /* border: 1px solid purple; */
+    margin: 0;
   }
   .detailContainer .details {
     background: linear-gradient(
@@ -77,8 +82,9 @@
     );
     color: antiquewhite;
     padding: 10px;
-    margin: 0;
-    min-height: 75%;
+    margin-top: 75px;
+    /* border: 1px red solid; */
+    /* height: 50%; */
     width: 100%;
     z-index: 1;
   }
@@ -102,7 +108,6 @@
     margin: 0;
   }
   .buttons {
-    width: 100%;
     margin: 0;
     padding: 15px 20px;
     display: flex;
@@ -110,5 +115,19 @@
   }
   .buttons button {
     margin: 0;
-  } 
+    border: 3px rgb(200, 200, 200, 0.7) solid;
+    background-color: transparent;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: antiquewhite;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .propertyOverview h3 {
+    margin: 0 10px 0 0;
+    color: rgb(200, 200, 200, 0.7);
+  }
 }
