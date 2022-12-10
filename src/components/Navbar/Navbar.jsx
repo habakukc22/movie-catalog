@@ -107,8 +107,16 @@ function Navbar() {
         </div>
         <div className={classes["applications-mob"]}>Applications</div>
         <div className={classes.login}>
-          <button className={classes["sign-in"]}>Login</button>
-          <button className={classes["sign-up"]}>Register</button>
+          <button className={classes["sign-in"]}>
+            <Link to="/sign-in" onClick={burguerMenuClickHandler}>
+              Login
+            </Link>
+          </button>
+          <button className={classes["sign-up"]}>
+            <Link to="/sign-up" onClick={burguerMenuClickHandler}>
+              Register
+            </Link>
+          </button>
         </div>
       </div>
     </nav>

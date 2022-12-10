@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Applications from "./pages/Applications";
-import User from "./pages/User";
 import { useDispatch, useSelector } from "react-redux";
 import { categoriesActions } from "./store/categories-slice";
 import { burguerActions } from "./store/burguer-slice";
@@ -11,8 +10,9 @@ import SingleMovie from "./pages/SingleMovie";
 import "./App.css";
 import SingleGenre from "./pages/SingleGenre";
 import CategoriesMobile from "./pages/CategoriesMobile";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
-// const myKey = "0f2b38bc79199925ea745449cbd43368";
 const ancestorHasId = (e, id) => {
   let currentEl = e.target;
 
@@ -75,7 +75,11 @@ function App() {
             />
             <Route
               path="/sign-in"
-              element={isSearching ? <SearchResults /> : <User />}
+              element={isSearching ? <SearchResults /> : <Login />}
+            />
+            <Route
+              path="/sign-up"
+              element={isSearching ? <SearchResults /> : <Register />}
             />
           </Routes>
         </div>

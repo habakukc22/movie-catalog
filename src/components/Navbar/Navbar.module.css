@@ -137,7 +137,7 @@
     margin: 2rem 2rem;
   }
 
-  .sign-in,
+  .sign-in ,
   .sign-up {
     font-size: inherit;
     background-color: rgb(10, 10, 10);
@@ -146,5 +146,10 @@
     border-radius: 0.5rem;
     margin: 0.8rem;
     padding: 0.5rem 0.8rem;
+  }
+  .sign-in a,
+  .sign-up a{
+    text-decoration: none;
+    color: inherit;
   }
 }

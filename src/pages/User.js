@@ -1,5 +1,6 @@
 function User() {
-  return <div>User</div>;
+
+  return <div>Personal user page</div>;
 }
 
 export default User;
