@@ -10,30 +10,43 @@ function Movie(props) {
   const showSearchBar = useSelector((state) => state.search.showSearchBar);
   const isSearching = useSelector((state) => state.search.isSearching);
   const dispatch = useDispatch();
+  // const index = props.index;
+  // const [isHovered, setIsHovered] = useState(false);
 
   const clickHandler = () => {
     if (showSearchBar) {
       dispatch(searchActions.toggleSearchBar());
     }
-    if(isSearching){
-      dispatch(searchActions.clearResults())
+    if (isSearching) {
+      dispatch(searchActions.clearResults());
     }
     navigate(`/${id}`);
   };
 
   return (
-    <Card className={classes.card} onClick={clickHandler}>
-      <img
-        src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
-        alt={title}
-      />
+    <Card
+      className={classes.card}
+      onClick={clickHandler}
+      // style={{ left: isHovered && index * 300 - 25 }}
+      // onMouseEnter={() => {
+      //   setIsHovered(true);
+      // }}
+      // onMouseLeave={() => {
+      //   setIsHovered(false);
+      // }}
+    >
+      <div className={classes.movieImg}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
+          alt={title}
+        />
+
+        <div className={classes.overview}>{overview}</div>
+      </div>
+
       <div className={classes["movie-info"]}>
         <h3>{title}</h3>
         <span className={classes.orange}>{vote_average}</span>
-      </div>
-      <div className={classes.overview}>
-        <h3>Overview</h3>
-        {overview}
       </div>
     </Card>
   );

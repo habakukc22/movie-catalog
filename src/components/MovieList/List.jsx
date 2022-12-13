@@ -54,8 +54,8 @@ function List(props) {
           onClick={() => clickHandler("left")}
         />
         <div className={classes.movieContainer} ref={listRef}>
-          {movies.map((movie) => (
-            <ListItem movie={movie} key={movie.id} />
+          {movies.map((movie, index) => (
+            <ListItem movie={movie} key={movie.id} index={index} />
           ))}
         </div>
         <SlArrowRight

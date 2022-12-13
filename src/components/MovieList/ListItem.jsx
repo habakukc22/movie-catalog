@@ -3,7 +3,7 @@ import Movie from "./Movie"
 function ListItem(props) {
   return (
     <>
-      <Movie movie={props.movie} />
+      <Movie movie={props.movie} index={props.index} />
     </>
   );
 }
