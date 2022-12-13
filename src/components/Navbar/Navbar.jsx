@@ -26,7 +26,8 @@ function Navbar() {
     dispatch(searchActions.clearResults());
   };
 
-  const openCategoriesHandler = () => {
+  const openCategoriesHandler = (e) => {
+    e.preventDefault();
     dispatch(categoriesActions.toggleCategoriesList());
   };
 
