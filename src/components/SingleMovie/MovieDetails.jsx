@@ -16,9 +16,7 @@ function MovieDetail(props) {
 
   return (
     <div className={classes.detailContainer}>
-
       <div className={classes.details}>
-        
         <h1>
           <span className={classes.title}>{movie.title}</span>
           <CiStar /> {votes}
@@ -53,12 +51,13 @@ function MovieDetail(props) {
         </span>
       </div>
 
-      <img
-        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-        alt={movie.title}
-        className={classes.poster}
-      />
-
+      <div className={classes.imgContainer}>
+        <img
+          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+          alt={movie.title}
+          className={classes.poster}
+        />
+      </div>
     </div>
   );
 }

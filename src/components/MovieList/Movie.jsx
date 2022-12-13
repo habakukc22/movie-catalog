@@ -10,8 +10,6 @@ function Movie(props) {
   const showSearchBar = useSelector((state) => state.search.showSearchBar);
   const isSearching = useSelector((state) => state.search.isSearching);
   const dispatch = useDispatch();
-  // const index = props.index;
-  // const [isHovered, setIsHovered] = useState(false);
 
   const clickHandler = () => {
     if (showSearchBar) {
@@ -24,17 +22,7 @@ function Movie(props) {
   };
 
   return (
-    <Card
-      className={classes.card}
-      onClick={clickHandler}
-      // style={{ left: isHovered && index * 300 - 25 }}
-      // onMouseEnter={() => {
-      //   setIsHovered(true);
-      // }}
-      // onMouseLeave={() => {
-      //   setIsHovered(false);
-      // }}
-    >
+    <Card className={classes.card} onClick={clickHandler}>
       <div className={classes.movieImg}>
         <img
           src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}

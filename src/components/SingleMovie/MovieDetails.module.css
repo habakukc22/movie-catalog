@@ -1,8 +1,75 @@
+/* @media (max-width: 960px) { */
+.detailContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  margin: 0;
+}
+.detailContainer .details {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: antiquewhite;
+  padding: 10px;
+  margin-top: 75px;
+  /* border: 1px red solid; */
+  /* height: 50%; */
+  width: 100%;
+  z-index: 1;
+}
+.detailContainer .imgContainer .poster {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.details h1 {
+  margin: 0;
+  max-width: fit-content;
+}
+.details h1 .title {
+  margin-right: 10px;
+}
+.property h3 {
+  margin: 5px 10px 5px 0;
+  color: rgb(200, 200, 200, 0.7);
+}
+.property p {
+  margin: 0;
+}
+.buttons {
+  margin: 0;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.buttons button {
+  margin: 0;
+  border: 3px rgb(200, 200, 200, 0.7) solid;
+  background-color: transparent;
+  font-size: large;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: antiquewhite;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.propertyOverview h3 {
+  margin: 0 10px 0 0;
+  color: rgb(200, 200, 200, 0.7);
+}
+/* } */
+
 @media (min-width: 960px) {
   .detailContainer {
     display: flex;
+    flex-direction: row;
     height: 500px;
-    position: relative;
+    margin: 0;
     overflow: hidden;
   }
   .detailContainer .details {
@@ -15,13 +82,28 @@
     color: antiquewhite;
     padding: 20px 10px 20px 70px;
     height: 100%;
-    width: 60%;
-    z-index: 1;
+    width: 70%;
+    margin: 0;
+    position: relative;
+    z-index: 10;
   }
-  .detailContainer .poster {
-    width: 60%;
+  .detailContainer .imgContainer .poster {
+    width: auto;
+    height: 100%;
     position: absolute;
+    z-index: 1;
     right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .imgContainer {
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .property {
@@ -47,7 +129,7 @@
   }
 
   .buttons {
-    margin: 0 10px 10px 0;
+    margin-right: 50px;
     display: flex;
   }
 
@@ -58,76 +140,10 @@
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 10px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     color: antiquewhite;
     display: flex;
     align-items: center;
     cursor: pointer;
-  }
-}
-
-@media (max-width: 960px) {
-  .detailContainer {
-    display: flex;
-    position: relative;
-    /* border: 1px solid purple; */
-    margin: 0;
-  }
-  .detailContainer .details {
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 75%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    color: antiquewhite;
-    padding: 10px;
-    margin-top: 75px;
-    /* border: 1px red solid; */
-    /* height: 50%; */
-    width: 100%;
-    z-index: 1;
-  }
-  .detailContainer .poster {
-    width: 100%;
-    position: absolute;
-    top: 0;
-  }
-  .details h1 {
-    margin: 0;
-    max-width: fit-content;
-  }
-  .details h1 .title {
-    margin-right: 10px;
-  }
-  .property h3 {
-    margin: 5px 10px 5px 0;
-    color: rgb(200, 200, 200, 0.7);
-  }
-  .property p {
-    margin: 0;
-  }
-  .buttons {
-    margin: 0;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-around;
-  }
-  .buttons button {
-    margin: 0;
-    border: 3px rgb(200, 200, 200, 0.7) solid;
-    background-color: transparent;
-    font-size: large;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: antiquewhite;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  .propertyOverview h3 {
-    margin: 0 10px 0 0;
-    color: rgb(200, 200, 200, 0.7);
   }
 }
