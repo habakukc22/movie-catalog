@@ -5,12 +5,25 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./Input.module.css";
 import { searchMovie } from "../../store/search-actions";
 import { searchActions } from "../../store/search-slice";
+import useDebounce from "../../hooks/useDebounce";
 
 function Input() {
   const inputRef = useRef();
   const dispatch = useDispatch();
   const showSearchBar = useSelector((state) => state.search.showSearchBar);
   const isSearching = useSelector((state) => state.search.isSearching);
+
+  let typedText;
+  //debounce
+  const doTheSearch = () => {
+    if (typedText !== "") {
+      dispatch(searchMovie(typedText));
+    } else {
+      dispatch(searchActions.clearResults());
+    }
+  };
+
+  const debouncedFunc = useDebounce(doTheSearch, 500);
 
   const searchClickHandler = () => {
     if (isSearching) {
@@ -22,13 +35,8 @@ function Input() {
   };
 
   const changeHandler = (event) => {
-    let typedText = inputRef.current.value.trim();
-
-    if (typedText !== "") {
-      dispatch(searchMovie(typedText));
-    } else {
-      dispatch(searchActions.clearResults());
-    }
+    typedText = inputRef.current.value.trim();
+    debouncedFunc();
   };
 
   const submitHandler = (event) => {
