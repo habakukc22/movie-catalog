@@ -65,12 +65,12 @@ function Navbar() {
           {isCategoriesShown && <Categories />}
         </div>
 
-        <Link
+        {/* <Link
           to="/applications"
           className={`${classes.button} ${classes.applications}`}
         >
           Applications
-        </Link>
+        </Link> */}
       </div>
 
       <div className={classes.right}>

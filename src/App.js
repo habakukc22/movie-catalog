@@ -69,10 +69,10 @@ function App() {
               path="/categories"
               element={isSearching ? <SearchResults /> : <CategoriesMobile />}
             />
-            <Route
+            {/* <Route
               path="/applications"
               element={isSearching ? <SearchResults /> : <Applications />}
-            />
+            /> */}
             <Route
               path="/sign-in"
               element={isSearching ? <SearchResults /> : <Login />}

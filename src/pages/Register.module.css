@@ -53,4 +53,14 @@
   .registerContainer .login {
     margin: 30px 0;
   }
+  @media (min-width: 960px) {
+    .registerContainerContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .registerContainer {
+      width: 50%;
+    }
+  }
   

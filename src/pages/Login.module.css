@@ -1,9 +1,7 @@
 .loginContainer {
   margin: 0;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   align-items: center;
   height: calc(100vh - 64px);
 }
@@ -25,6 +23,7 @@
   padding: 10px 20px;
   border-radius: 10px;
   color: antiquewhite;
+  cursor: pointer;
 }
 .inputField {
   width: 100%;
@@ -55,4 +54,15 @@
 
 .loginContainer .register {
   margin: 30px 0;
+}
+
+@media (min-width: 960px) {
+  .loginContainerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginContainer {
+    width: 50%;
+  }
 }
