@@ -39,9 +39,11 @@ function Input() {
     typedText = inputRef.current.value.trim();
     debouncedFunc();
   };
-  if (!showSearchBar) {
+
+  if (!showSearchBar && inputRef.current) {
     inputRef.current.value = "";
   }
+  
   return (
     <div
       className={`${classes.searchContainer} ${
