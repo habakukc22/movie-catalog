@@ -1,7 +1,7 @@
 .card {
   width: 150px;
   border-radius: 5px;
-  margin: 0.25rem;
+  margin: 8px;
 }
 
 .card img {
@@ -12,7 +12,7 @@
 
 .card .movie-info {
   background: rgb(26, 26, 26, 0.5);
-  color: antiquewhite;
+  color: white;
   padding: 5px 2.5px;
   font-size: small;
 }
@@ -39,7 +39,7 @@
   }
 
   .card .movie-info {
-    color: antiquewhite;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;

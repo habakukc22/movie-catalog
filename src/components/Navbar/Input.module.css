@@ -36,7 +36,7 @@
   width: 100%;
   padding: 0px 64px 0px 16px;
   position: absolute;
-  right:0;
+  right: 0;
   border: 1px solid #ddd;
   font-size: large;
 }
@@ -75,4 +75,27 @@
 }
 .searchContainer.expanded .iconsContainer .search-icon {
   display: none;
+}
+
+@media (min-width: 960px) {
+  .searchContainer.expanded {
+    position: relative;
+    right: 0;
+    height: 52px;
+    width: 256px;
+    z-index: 10;
+  }
+
+  .searchContainer.expanded input {
+    box-shadow: 0 8px 24px rgb(0 0 0 / 30%);
+    color: white;
+    background-color: #292929;
+    height: 100%;
+    width: 100%;
+    padding: 0px 64px 0px 16px;
+    position: absolute;
+    right: 0;
+    border: 1px solid #ddd;
+    font-size: large;
+  }
 }
