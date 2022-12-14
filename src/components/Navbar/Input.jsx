@@ -30,6 +30,7 @@ function Input() {
       dispatch(searchActions.toggleSearchBar());
       dispatch(searchActions.clearResults());
     } else {
+      // inputRef.current.autoFocus = true;
       dispatch(searchActions.toggleSearchBar());
     }
   };
@@ -38,35 +39,35 @@ function Input() {
     typedText = inputRef.current.value.trim();
     debouncedFunc();
   };
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-  };
-
+  if (!showSearchBar) {
+    inputRef.current.value = "";
+  }
   return (
-    <div className={classes.input}>
-      <form onSubmit={submitHandler}>
-        {showSearchBar && (
-          <input
-            type="text"
-            placeholder="Search"
-            onChange={changeHandler}
-            ref={inputRef}
-            autoFocus={true}
-          />
-        )}
-        {!showSearchBar ? (
+    <div
+      className={`${classes.searchContainer} ${
+        showSearchBar ? classes.expanded : ""
+      }`}
+    >
+      <input
+        id="input-search"
+        type="text"
+        placeholder="Search"
+        onChange={changeHandler}
+        ref={inputRef}
+      />
+
+      <div className={classes.iconsContainer}>
+        <AiOutlineClose
+          className={classes["close-icon"]}
+          onClick={searchClickHandler}
+        />
+        <label htmlFor="input-search">
           <FaSearch
             className={classes["search-icon"]}
             onClick={searchClickHandler}
           />
-        ) : (
-          <AiOutlineClose
-            className={classes["close-icon"]}
-            onClick={searchClickHandler}
-          />
-        )}
-      </form>
+        </label>
+      </div>
     </div>
   );
 }

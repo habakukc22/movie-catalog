@@ -1,7 +1,7 @@
 @media (min-width: 960px) {
   .navbar {
     background-color: rgb(10, 10, 10);
-    height: 30px;
+    height: 32px;
     padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
