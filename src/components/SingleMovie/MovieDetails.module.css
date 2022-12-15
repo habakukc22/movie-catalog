@@ -1,26 +1,35 @@
 .detailContainer {
+  background: black;
   display: flex;
   flex-direction: column-reverse;
   position: relative;
+  z-index: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 .detailContainer .details {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 75%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  color: antiquewhite;
+  background: transparent;
+  color: white;
   padding: 10px;
   margin-top: 75px;
   width: 100%;
-  z-index: 1;
+  position: relative;
+  z-index: 3;
+
+  box-sizing: border-box;
 }
-.detailContainer .imgContainer .poster {
+
+.detailContainer img {
   width: 100%;
   position: absolute;
   top: 0;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+    
 }
 .details h1 {
   margin: 0;
@@ -29,6 +38,11 @@
 .details h1 .title {
   margin-right: 10px;
 }
+
+.details h1 svg {
+  color: rgb(255, 255, 0, 0.8);
+}
+
 .property h3 {
   margin: 5px 10px 5px 0;
   color: rgb(200, 200, 200, 0.7);
@@ -50,56 +64,53 @@
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 10px;
-  color: antiquewhite;
+  color: white;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 .propertyOverview h3 {
-  margin: 0 10px 0 0;
+  margin: 0 0 16px 0;
   color: rgb(200, 200, 200, 0.7);
 }
+.propertyOverview p {
+  margin: 0;
+}
 
+/* desktop styles */
 @media (min-width: 960px) {
   .detailContainer {
+    background-color: black;
     display: flex;
     flex-direction: row;
     height: 500px;
     margin: 0;
     overflow: hidden;
+    position: relative;
+    z-index: 10;
   }
   .detailContainer .details {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 75%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    color: antiquewhite;
+    background: transparent;
+    color: white;
     padding: 20px 10px 20px 70px;
     height: 100%;
-    width: 70%;
+    width: 60%;
     margin: 0;
     position: relative;
     z-index: 10;
   }
-  .detailContainer .imgContainer .poster {
+  .detailContainer img {
     width: auto;
     height: 100%;
     position: absolute;
     z-index: 1;
     right: 0;
     top: 0;
-    bottom: 0;
-  }
-
-  .imgContainer {
-    width: 60%;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
   }
 
   .property {
@@ -118,7 +129,7 @@
   }
   .propertyOverview p {
     width: 75%;
-    margin: 0;
+    margin: 0 0 0 0;
   }
   .details h1 .title {
     margin-right: 30px;

@@ -102,7 +102,7 @@
   .navbar {
     background-color: rgb(10, 10, 10);
     height: 32px;
-    padding: 1rem 3rem;
+    padding: 1rem 6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,7 +140,7 @@
 
   .categoriesButton {
     display: flex;
-    align-items: center;
+    align-items: end;
     text-decoration: none;
     color: inherit;
   }

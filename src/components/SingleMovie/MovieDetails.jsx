@@ -1,4 +1,4 @@
-import { CiStar } from "react-icons/ci";
+import { AiFillStar } from "react-icons/ai";
 import { FiPlay } from "react-icons/fi";
 import { BsPlusLg } from "react-icons/bs";
 import classes from "./MovieDetails.module.css";
@@ -19,7 +19,7 @@ function MovieDetail(props) {
       <div className={classes.details}>
         <h1>
           <span className={classes.title}>{movie.title}</span>
-          <CiStar /> {votes}
+          <AiFillStar /> {votes}
         </h1>
         <span className={classes.property}>
           <h3>Release date:</h3>
@@ -51,13 +51,10 @@ function MovieDetail(props) {
         </span>
       </div>
 
-      <div className={classes.imgContainer}>
-        <img
-          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-          alt={movie.title}
-          className={classes.poster}
-        />
-      </div>
+      <img
+        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+        alt={movie.title}
+      />
     </div>
   );
 }
