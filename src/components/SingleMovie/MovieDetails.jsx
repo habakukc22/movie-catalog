@@ -35,11 +35,11 @@ function MovieDetail(props) {
         </span>
 
         <div className={classes.buttons}>
-          <button>
+          <button className={classes.play}>
             <FiPlay />
             <span>Play</span>
           </button>
-          <button>
+          <button className={classes.add}>
             <BsPlusLg />
             <span>My list</span>
           </button>

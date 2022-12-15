@@ -1,12 +1,12 @@
 .searchResults {
-  margin: 0 50px;
+  margin: 12px 5px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-@media (max-width: 960px) {
+@media (min-width: 960px) {
   .searchResults {
-    margin: 0 5px;
+    margin: 24px 48px;
   }
 }
