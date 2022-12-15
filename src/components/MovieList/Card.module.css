@@ -35,7 +35,6 @@
     text-align: left;
     flex: 0 0 auto;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
   }
 
   .card .movie-info {
@@ -55,11 +54,14 @@
     object-fit: cover;
     border-radius: 5px;
   }
-  .card:hover {
-    transform: scale(1.2);
-  }
 
   .card:hover .movieImg {
+    z-index: 100;
+    transform: scale(1.27);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
+    transition: transform 0.2s ease-in-out 0s;
+    transform: scale(1.2);
+    transform-origin: center bottom;
     position: relative;
   }
 
@@ -67,7 +69,7 @@
     background: linear-gradient(
       to top,
       rgb(26, 26, 26, 1) 0%,
-      rgba(26, 26, 26, .8) 75%,
+      rgba(26, 26, 26, 0.8) 75%,
       rgba(26, 26, 26, 0) 100%
     );
     width: 100%;
@@ -80,6 +82,6 @@
     right: 0;
     left: 0;
     bottom: 0;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
