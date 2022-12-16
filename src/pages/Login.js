@@ -16,17 +16,32 @@ function Login() {
         <form onSubmit={submitHandler}>
           <div className={classes.inputField}>
             <label htmlFor="email">
-              <input type="email" id="email" placeholder="E-Mail" className={classes.input} autoFocus />
+              <input
+                type="email"
+                id="email"
+                placeholder="E-Mail"
+                className={classes.input}
+                autoFocus
+              />
               <span className={`${classes.span1} ${classes.span2}`}></span>
-              <span className={`${classes.span3} ${classes.span4}`}>E-Mail</span>
+              <span className={`${classes.span3} ${classes.span4}`}>
+                E-Mail
+              </span>
             </label>
           </div>
 
           <div className={classes.inputField}>
             <label htmlFor="password">
-            <input type="password" id="password" placeholder="Password" className={classes.input} />
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                className={classes.input}
+              />
               <span className={`${classes.span1} ${classes.span2}`}></span>
-              <span className={`${classes.span3} ${classes.span4}`}>Password</span>
+              <span className={`${classes.span3} ${classes.span4}`}>
+                Password
+              </span>
             </label>
           </div>
 

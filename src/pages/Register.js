@@ -13,32 +13,79 @@ function Register() {
 
         <form onSubmit={submitHandler}>
           <div className={classes.inputField}>
-            <label htmlFor="first-name">First Name</label>
-            <input type="text" id="first-name" placeholder="First Name" />
+            <label htmlFor="first-name">
+              <input
+                type="text"
+                id="first-name"
+                placeholder="First name"
+                className={classes.input}
+                autoFocus
+              />
+              <span className={`${classes.span1} ${classes.span2}`}></span>
+              <span className={`${classes.span3} ${classes.span4}`}>
+                First name
+              </span>
+            </label>
           </div>
 
           <div className={classes.inputField}>
-            <label htmlFor="first-last">Last Name</label>
-            <input type="text" id="first-last" placeholder="Last Name" />
+            <label htmlFor="last-name">
+              <input
+                type="text"
+                id="last-name"
+                placeholder="Last name"
+                className={classes.input}
+              />
+              <span className={`${classes.span1} ${classes.span2}`}></span>
+              <span className={`${classes.span3} ${classes.span4}`}>
+                Last name
+              </span>
+            </label>
           </div>
 
           <div className={classes.inputField}>
-            <label htmlFor="email">E-Mail</label>
-            <input type="email" id="email" placeholder="E-Mail" />
+            <label htmlFor="email">
+              <input
+                type="email"
+                id="email"
+                placeholder="E-Mail"
+                className={classes.input}
+              />
+              <span className={`${classes.span1} ${classes.span2}`}></span>
+              <span className={`${classes.span3} ${classes.span4}`}>
+                E-Mail
+              </span>
+            </label>
           </div>
 
           <div className={classes.inputField}>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" placeholder="Password" />
+            <label htmlFor="password">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                className={classes.input}
+              />
+              <span className={`${classes.span1} ${classes.span2}`}></span>
+              <span className={`${classes.span3} ${classes.span4}`}>
+                Password
+              </span>
+            </label>
           </div>
 
           <div className={classes.inputField}>
-            <label htmlFor="re-password">Re-enter password</label>
-            <input
-              type="password"
-              id="re-password"
-              placeholder="Re-enter password"
-            />
+            <label htmlFor="re-password">
+              <input
+                type="password"
+                id="re-password"
+                placeholder="Re-enter password"
+                className={classes.input}
+              />
+              <span className={`${classes.span1} ${classes.span2}`}></span>
+              <span className={`${classes.span3} ${classes.span4}`}>
+                Re-enter password
+              </span>
+            </label>
           </div>
 
           <button>Enter</button>
