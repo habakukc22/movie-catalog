@@ -6,7 +6,7 @@
   height: calc(100vh - 64px);
 }
 
-.loginContainer form{
+.loginContainer form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,6 +151,9 @@
 
 .loginContainer .register {
   margin: 30px 0;
+}
+.loginContainer .register a:hover {
+  color: #0c9bff;
 }
 
 @media (min-width: 960px) {

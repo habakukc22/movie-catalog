@@ -4,6 +4,20 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.error {
+  margin: 12px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.error svg{
+  margin-right: 12px;
+  font-size: x-large;
+  color: rgb(171,171,171);
+}
 
 @media (min-width: 960px) {
   .searchResults {

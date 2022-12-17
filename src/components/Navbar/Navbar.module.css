@@ -155,6 +155,15 @@
   .navbar .right .button {
     margin-left: 32px;
   }
+
+  .navbar .right .button:hover {
+    color: rgb(12, 155, 255);
+  }
+
+  .navbar .left .button:hover {
+    color: rgb(12, 155, 255);
+  }
+
   .navbar .right .button svg {
     font-weight: bold;
     font-size: 20px;
@@ -166,6 +175,9 @@
     align-items: end;
     text-decoration: none;
     color: inherit;
+  }
+  .categoriesButton:hover {
+    color: rgb(12, 155, 255);
   }
   .categoriesContainer {
     position: relative;

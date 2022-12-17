@@ -149,6 +149,10 @@
   font-size: larger;
 }
 
+.registerContainer .login a:hover {
+  color: #0c9bff;
+}
+
 .registerContainer .login {
   padding: 30px 0;
 }
