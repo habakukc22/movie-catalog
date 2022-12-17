@@ -4,7 +4,7 @@ import classes from "./Register.module.css";
 function Register() {
   const submitHandler = (e) => {
     e.preventDefault();
-    alert("Submitted!");
+    alert("Sorry! This functionality is a work in progress.");
   };
   return (
     <div className={classes.registerContainerContainer}>

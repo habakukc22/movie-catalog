@@ -1,8 +1,0 @@
-.category {
-  height: 300px;
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  /* border: 1px red dashed; */
-}

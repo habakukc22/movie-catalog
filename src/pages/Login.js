@@ -5,7 +5,7 @@ function Login() {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    alert("Submitted!");
+    alert("Sorry! This functionality is a work in progress.");
   };
 
   return (

@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
-import Applications from "./pages/Applications";
 import { useDispatch, useSelector } from "react-redux";
 import { categoriesActions } from "./store/categories-slice";
 import { burguerActions } from "./store/burguer-slice";
