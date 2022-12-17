@@ -1,8 +1,0 @@
-inspired by: https://www.viki.com/
-
-commands used:
-
-npm install react-icons
-npm install react-router-dom
-npm install react-redux
-npm install @reduxjs/toolkit
