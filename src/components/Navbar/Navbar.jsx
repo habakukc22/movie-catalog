@@ -35,6 +35,11 @@ function Navbar() {
     dispatch(burguerActions.toggleBurguerMenu());
   };
 
+  const appHandler = (e) => {
+    e.preventDefault();
+    alert("Sorry! This functionality is a work in progress.");
+  };
+
   const screenWidth = document.querySelector("#root").clientWidth;
 
   return (
@@ -106,7 +111,9 @@ function Navbar() {
           </Link>
           {/* <GoTriangleDown /> */}
         </div>
-        <div className={classes["applications-mob"]}>Applications</div>
+        <div className={classes["applications-mob"]} onClick={appHandler}>
+          Applications
+        </div>
         <div className={classes.login}>
           <button className={classes["sign-in"]}>
             <Link to="/sign-in" onClick={burguerMenuClickHandler}>
