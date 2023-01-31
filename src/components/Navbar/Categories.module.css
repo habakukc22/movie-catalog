@@ -1,0 +1,36 @@
+.categories {
+  background-color: rgb(26, 26, 26, .95);
+  box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 100;
+  border-radius: 10px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 600px;
+  width: 300px; 
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.categories a {
+  text-decoration: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+.categories .genre {
+  margin: 1rem 1rem;
+}
+.categories.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.categories a:hover {
+  text-decoration: underline;
+}

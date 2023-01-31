@@ -1,0 +1,101 @@
+.searchContainer {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
+.searchContainer.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 10;
+}
+
+.searchContainer input {
+  box-sizing: border-box;
+  color: white;
+  background-color: #292929;
+  position: absolute;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+  transition: width 0.2s ease-in, padding 0.2s ease-in;
+  border: 0;
+}
+
+.searchContainer.expanded input {
+  box-shadow: 0 8px 24px rgb(0 0 0 / 30%);
+  color: white;
+  background-color: #292929;
+  height: 100%;
+  width: 100%;
+  padding: 0px 64px 0px 16px;
+  position: absolute;
+  right: 0;
+  border: 1px solid #ddd;
+  font-size: large;
+}
+
+.searchContainer .iconsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.searchContainer.expanded .iconsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 20px;
+}
+
+.searchContainer input:focus {
+  outline: none;
+}
+
+.search-icon,
+.close-icon {
+  color: white;
+  margin-left: 0.5em;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.close-icon {
+  display: none;
+}
+.searchContainer.expanded .iconsContainer .close-icon {
+  display: inherit;
+}
+.searchContainer.expanded .iconsContainer .search-icon {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .searchContainer.expanded {
+    position: relative;
+    right: 0;
+    height: 52px;
+    width: 320px;
+    z-index: 10;
+  }
+
+  .searchContainer.expanded input {
+    box-shadow: 0 8px 24px rgb(0 0 0 / 30%);
+    color: white;
+    background-color: #292929;
+    height: 100%;
+    width: 100%;
+    padding: 0px 64px 0px 16px;
+    position: absolute;
+    right: 0;
+    border: 1px solid #ddd;
+    font-size: large;
+  }
+}

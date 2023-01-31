@@ -1,0 +1,9 @@
+.singleGenre {
+  margin: 0 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.genreTitle {
+  margin-left: 50px; 
+}

@@ -1,0 +1,87 @@
+.card {
+  width: 150px;
+  border-radius: 5px;
+  margin: 8px;
+}
+
+.card img {
+  box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card .movie-info {
+  background: rgb(26, 26, 26, 0.5);
+  color: white;
+  padding: 5px 2.5px;
+  font-size: small;
+}
+.card .movie-info span {
+  display: none;
+}
+.card .movie-info h3 {
+  margin: 0;
+}
+.card .overview {
+  display: none;
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .card {
+    width: 300px;
+    margin: 0.5rem;
+    border-radius: 5px;
+    text-align: left;
+    flex: 0 0 auto;
+    cursor: pointer;
+  }
+
+  .card .movie-info {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px;
+    letter-spacing: 0.5px;
+  }
+  .card .movie-info h3 {
+    margin: 0;
+  }
+  .card .movieImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .card:hover .movieImg {
+    z-index: 100;
+    transform: scale(1.27);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
+    transition: transform 0.2s ease-in-out 0s;
+    transform: scale(1.2);
+    transform-origin: center bottom;
+    position: relative;
+  }
+
+  .card:hover .movieImg .overview {
+    background: linear-gradient(
+      to top,
+      rgb(26, 26, 26, 1) 0%,
+      rgba(26, 26, 26, 0.8) 75%,
+      rgba(26, 26, 26, 0) 100%
+    );
+    width: 100%;
+    display: block;
+    max-height: 30%;
+    overflow: hidden;
+    border-radius: 5px;
+    position: absolute;
+    top: 68%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 0.8rem;
+  }
+}

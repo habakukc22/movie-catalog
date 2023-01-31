@@ -1,0 +1,168 @@
+.loginContainer {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 64px);
+}
+
+.loginContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginContainer form button {
+  margin: 15px 0;
+  width: 200px;
+  font-size: large;
+  font-weight: bold;
+  line-height: 2rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  min-width: 7.5em;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  color: white;
+  background: linear-gradient(
+      45deg,
+      rgb(73, 75, 255) 0%,
+      rgb(11, 154, 255) 100%
+    )
+    border-box border-box;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px;
+}
+
+.inputField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+.inputField label {
+  margin: 8px 0px;
+
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  position: relative;
+  display: inline-block;
+  height: 2.5em;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: text;
+}
+
+.inputField label .input {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  box-sizing: border-box;
+  margin: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.25em;
+  padding: calc(0.5em - 1px) calc(0.75em - 1px);
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  background-color: rgb(26, 26, 26);
+  caret-color: rgb(12, 155, 255);
+
+  position: relative;
+  z-index: 100;
+
+  overflow: visible;
+
+  /* -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%; */
+}
+
+/* .inputField label .input[type="password"] {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  box-sizing: border-box;
+  margin: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.25em;
+  padding: calc(0.5em - 1px) calc(0.75em - 1px);
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  background-color: rgb(26, 26, 26);
+  caret-color: rgb(12, 155, 255);
+
+  position: relative;
+  z-index: 100;
+} */
+
+.inputField label .input:focus {
+  outline-width: 0;
+  border: 1px solid rgb(12, 155, 255);
+}
+
+.input:focus + .span1::before {
+  content: "";
+  position: absolute;
+  inset: -0.12em;
+  opacity: 0.2;
+  border-radius: 0.4em;
+  border: 0.12em solid rgb(12, 155, 255);
+}
+
+.span4 {
+  font-weight: normal;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  position: absolute;
+  z-index: 101;
+  top: -0.66em;
+  left: 0.66em;
+  padding: 0px 0.33em;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(26, 26, 26);
+  border-radius: 0.33em;
+  transition: color 0.2s ease 0s, font-size 0.2s ease 0s,
+    line-height 0.2s ease 0s, top 0.2s ease 0s, left 0.2s ease 0s,
+    padding 0.2s ease 0s;
+}
+
+.input:not(:focus):placeholder-shown ~ .span3 {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  top: 0.5em;
+  left: 0.75em;
+  padding: 0px;
+  background-color: transparent;
+  color: transparent;
+}
+
+.input:focus ~ .span3 {
+  color: rgb(12, 155, 255);
+}
+
+.loginContainer .register a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.loginContainer .register {
+  margin: 30px 0;
+}
+.loginContainer .register a:hover {
+  color: #0c9bff;
+}
+
+@media (min-width: 960px) {
+  .loginContainerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginContainer {
+    width: 50%;
+  }
+}

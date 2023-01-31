@@ -1,0 +1,80 @@
+.list {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.list .listTitle {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 48px;
+  text-align: start;
+}
+
+.list .wrapper .movieContainer {
+  position: relative;
+  margin-left: 25px;
+  display: flex;
+  width: max-content;
+  margin-top: 20px;
+  transform: translateX(0px);
+  transition: transform 0.3s ease-out;
+}
+
+.list .wrapper {
+  position: relative;
+}
+
+.list .wrapper .sliderArrow {
+  width: 30px;
+  height: 172px;
+  background: rgb(22, 22, 22, 0.5);
+  color: white;
+  position: absolute;
+  z-index: 99;
+  top: 6px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.list .wrapper .sliderArrow.left {
+  left: 0;
+}
+.list .wrapper .sliderArrow.right {
+  right: 0;
+}
+
+@media (max-width: 960px) {
+    .list {
+        width: 100%;
+        margin: 28px 0;
+      }
+      
+      .list .listTitle {
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 10px;
+        text-align: start;
+        display: flex;
+      }
+      
+      .list .wrapper .movieContainer {
+        margin-left: 2px;
+        display: flex;
+        width: max-content;
+        margin-top: 10px;
+        transform: translateX(0px);
+        transition: transform 0.3s ease-out;
+        
+      }
+      
+      .list .wrapper {
+        position: relative;
+        overflow: scroll;
+      }
+      
+      .list .wrapper .sliderArrow {
+        display: none;
+      }
+}
